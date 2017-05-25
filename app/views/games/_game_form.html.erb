@@ -1,0 +1,12 @@
+<%= form_for @game do |f| %>
+
+    <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control', placeholder: 'Enter the title of your goal' %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.submit "Add Game", class: 'btn btn-primary' %>
+    </div>
+
+<% end %>
