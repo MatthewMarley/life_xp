@@ -1,7 +1,4 @@
 Requirements
- - Users should be able to sign up
-     - For this I will need devise
-     - 
      
  - What pages do I need?
      - My game page
@@ -13,3 +10,16 @@ Requirements
  - Task model
      - Name of Task (e.g. Programming - 30 Minute, Gym, Gym Record, Read - 30 Minutes). String.
      - Point/Value (10, 20, 15, 10). Integer.
+     
+Migrations
+Game
+    - User_id -> Foreign Key
+    - Title
+    
+Task
+    - Name of task
+    - Game_id -> Foreign Key
+    - User_id -> Foreign Key
+    - Point Value
+    
+    
