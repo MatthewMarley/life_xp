@@ -1,5 +1,25 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <h1 align="center"><%= "#{@game.user.username}" + " - " + "#{@game.title}" %></h1>
+        
+        <div class="Add Task text-center">
+            <%= link_to "Add a New Task", new_game_task_path(@game) %>
+        </div>
+        <h1>Your current score is:  <span id="totalScore"></span></h1>
     </div>
+</div>
+<hr>
+<div class="row">
+    <% @game.tasks.each do |task| %>
+        <div class="col-md-3">
+            <div class="well task-well text-center">
+                <strong><%= task.name %></strong>
+                <hr>
+                <strong>Points: </strong><div class=<%= "points#{task.id}" -%>><%= task.points %></div>
+                <hr>
+                <div class="btn btn-primary testing123" id=<%= "task#{task.id}" -%>>Add Task</div>
+            </div>
+        </div>
+    <% end %>
+  
 </div>
