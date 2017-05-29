@@ -69,6 +69,7 @@
                 <tr role="row">
                     <th class="sorting">Date</th>
                     <th>Points</th>
+                    <th>Multiplier</th>
                 </tr>
             </thead>
             <tbody>
@@ -76,6 +77,7 @@
                     <tr>
                         <td><%= daily.date %></td>
                         <td><%= daily.points %></td>
+                        <td><%= daily.multiplier.round(1) %></td>
                     </tr>
                 <% end %>
             </tbody>

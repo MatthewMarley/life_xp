@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529111851) do
+ActiveRecord::Schema.define(version: 20170529161839) do
 
   create_table "dailies", force: :cascade do |t|
     t.integer  "game_id"
     t.date     "date"
     t.integer  "points"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "user_id"
+    t.integer  "multiplier", default: 1
   end
 
   create_table "games", force: :cascade do |t|
