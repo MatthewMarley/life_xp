@@ -26,3 +26,7 @@ h1, h2, h3 {
 .pointvalue {
     display: inline;
 }
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
+    text-align: center;
+}

@@ -5,6 +5,28 @@
         <div class="Add Task text-center">
             <%= link_to "Add a New Task", new_game_task_path(@game) %>
         </div>
+        
+        <hr>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Day: </th>
+                    <th>Total Points: </th>
+                    <th>Average Points: </th>
+                    <th>Max Points: </th>
+                </tr>
+                <tr>
+                    <td><%= @game.dailies.count %></td>
+                    <td><%= number_with_delimiter(@game.dailies.sum(:points), :delimiter => ',') %></td>
+                    <td><%= number_with_delimiter(@game.dailies.average(:points).round(2), :delimiter => ',') %></td>
+                    <td><%= number_with_delimiter(@game.dailies.maximum(:points).round(0), :delimiter => ',') %></td>
+                </tr>
+            </thead>
+        </table>
+        
+        <hr>
+        
         <h1 align="center">Your current score is:  <span id="totalScore"></span></h1>
         
         <div class="panel panel-default">
@@ -42,10 +64,10 @@
 
 <div class="row">
     <div class="col-md-12">
-        <table class="table table-striped table-hover table-responsive">
+        <table id="dailyTable2" class="table table-striped table-hover table-responsive dataTable">
             <thead class="thead-inverse">
-                <tr>
-                    <th>Date</th>
+                <tr role="row">
+                    <th class="sorting">Date</th>
                     <th>Points</th>
                 </tr>
             </thead>
@@ -58,7 +80,5 @@
                 <% end %>
             </tbody>
         </table>
-
-            
     </div>
 </div>
