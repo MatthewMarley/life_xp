@@ -18,7 +18,8 @@ class GamesController < ApplicationController
     
     def show
         @game = Game.find(params[:id])
-        @dailytable = DailyTable.new
+        @daily = Daily.new
+        @game.dailies = Daily.order('date DESC')
     end
    
    

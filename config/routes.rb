@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   resources :games do
     resources :tasks
-    resources :dailys
+    resources :dailies
   end
   
 end

@@ -17,7 +17,7 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <%= render 'daily_tables/daily_form' %>
+                    <%= render 'dailies/daily_form' %>
                 </div>
             </div>
         </div>
@@ -38,4 +38,27 @@
         </div>
     <% end %>
   
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped table-hover table-responsive">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Date</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @game.dailies.each do |daily| %>
+                    <tr>
+                        <td><%= daily.date %></td>
+                        <td><%= daily.points %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+
+            
+    </div>
 </div>
