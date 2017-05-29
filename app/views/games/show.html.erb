@@ -5,7 +5,23 @@
         <div class="Add Task text-center">
             <%= link_to "Add a New Task", new_game_task_path(@game) %>
         </div>
-        <h1>Your current score is:  <span id="totalScore"></span></h1>
+        <h1 align="center">Your current score is:  <span id="totalScore"></span></h1>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading well-border">
+                <h4="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#collapseOne">
+                        <div align="center">Add Daily Points</div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <%= render 'daily_tables/daily_form' %>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
 <hr>

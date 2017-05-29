@@ -22,4 +22,9 @@ Task
     - User_id -> Foreign Key
     - Point Value
     
+Day
+    - Game_id -> Foreign Key
+    - Date -> Just the Year
+    - Points -> The total Points for the Day
+    
     

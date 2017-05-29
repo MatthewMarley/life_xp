@@ -3,19 +3,36 @@ $(document).on('turbolinks:load', function() {
     $('.alert').delay(4000).fadeOut(2000);
     
     var gamepoint = 0;
-    
-    $('#task1').click(function(){
-        var pointvalue = parseInt($('.points1').text());
+
+        $('#task6').click(function(){
+        var pointvalue = parseInt($('.points6').text());
         gamepoint = gamepoint + pointvalue;
         document.getElementById("totalScore").innerHTML = gamepoint;
-    });
+    }); 
     
-    $('#task5').click(function(){
-        var pointvalue = parseInt($('.points5').text());
+         $('#task7').click(function(){
+        var pointvalue = parseInt($('.points7').text());
         gamepoint = gamepoint + pointvalue;
         document.getElementById("totalScore").innerHTML = gamepoint;
-        // alert(gamepoint);
-    });
+    }); 
+    
+         $('#task8').click(function(){
+        var pointvalue = parseInt($('.points8').text());
+        gamepoint = gamepoint + pointvalue;
+        document.getElementById("totalScore").innerHTML = gamepoint;
+    }); 
+    
+         $('#task9').click(function(){
+        var pointvalue = parseInt($('.points9').text());
+        gamepoint = gamepoint + pointvalue;
+        document.getElementById("totalScore").innerHTML = gamepoint;
+    }); 
+    
+         $('#task10').click(function(){
+        var pointvalue = parseInt($('.points10').text());
+        gamepoint = gamepoint + pointvalue;
+        document.getElementById("totalScore").innerHTML = gamepoint;
+    }); 
     
 
 });

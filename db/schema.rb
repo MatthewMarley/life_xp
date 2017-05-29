@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525161150) do
+ActiveRecord::Schema.define(version: 20170529093224) do
+
+  create_table "daily_tables", force: :cascade do |t|
+    t.integer  "game_id"
+    t.date     "date"
+    t.integer  "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "games", force: :cascade do |t|
     t.integer  "user_id"

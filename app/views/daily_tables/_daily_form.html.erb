@@ -1,0 +1,15 @@
+<%= form_for [@game, @dailytable], url: game_dailys_path(@game) do |f| %>
+
+    <div class="form-group">
+        <%= f.label :date %>
+        <%= f.date_field :date, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :points %>
+        <%= f.number_field :points, class: 'form-control' %>
+    </div>
+    
+    <%= f.submit "Add Daily Points", class: 'btn btn-primary' %>
+
+<% end %>
