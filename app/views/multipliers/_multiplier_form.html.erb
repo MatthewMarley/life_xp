@@ -1,0 +1,15 @@
+<%= form_for @multiplier, url: game_multipliers_path(@game) do |f| %>
+
+    <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, rows: 2, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :multiplication %>
+        <%= f.number_field :multiplication, class: "form-control", :step => "0.01" %>
+    </div>
+    
+    <%= f.submit "Add New Multiplier", class: 'btn btn-primary' %>
+
+<% end %>

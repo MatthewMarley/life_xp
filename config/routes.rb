@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :games do
     resources :tasks
     resources :dailies
+    resources :multipliers
   end
   
 end

@@ -1,9 +1,13 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <h1 align="center"><%= "#{@game.user.username}" + " - " + "#{@game.title}" %></h1>
-        
+        <hr>
         <div class="Add Task text-center">
             <%= link_to "Add a New Task", new_game_task_path(@game) %>
+            <hr>
+            <%= link_to "Add a New Multiplier", new_game_multiplier_path(@game) %>
+            <hr>
+            <%= link_to "See Multiplier Table", game_multipliers_path(@game) %>
         </div>
         
         <hr>
