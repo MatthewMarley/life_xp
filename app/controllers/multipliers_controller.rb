@@ -24,6 +24,39 @@ class MultipliersController < ApplicationController
         end
     end
     
+    def edit 
+        @game = Game.find(params[:game_id])
+        @multiplier = Multiplier.find(params[:id])
+    end
+   
+    def update
+        @game = Game.find(params[:game_id])
+        @multiplier = Multiplier.find(params[:id])
+        if @multiplier.update(multiplier_params)
+            flash[:success] = "Multiplier successfully amended"
+            redirect_to game_multipliers_path(@game)
+        else
+            flash[:danger] = "Multiplier unable to be amended"
+            render 'edit'
+        end
+    end
+    
+    
+    
+    
+    
+    
+    def destroy
+        @game = Game.find(params[:game_id])
+        @multiplier = Multiplier.find(params[:id])
+        if @multiplier.destroy
+            flash[:success] = "Multiplier successfully deleted"
+            redirect_to game_multipliers_path(@game)
+        else
+            flash[:danger] = @multiplication.errors.full_messages.join(", ")
+            redirect_to game_multipliers_path(@game)
+        end
+    end
     
     
     

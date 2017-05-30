@@ -30,7 +30,13 @@
                 <% @game.multipliers.each do |multiplier| %>
                     <tr>
                         <td><%= multiplier.description %></td>
-                        <td><%= multiplier.multiplication.round(3) %></td>
+                        <td><%= multiplier.multiplication.round(4) %></td>
+                        <% if multiplier.user_id == current_user.id %>
+                            <td><%= link_to "Edit Multiplier", edit_game_multiplier_path(@game, multiplier),
+                            class: 'btn btn-xs btn-primary' %></td>
+                            <td><%= link_to "Delete Multiplier", game_multiplier_path(@game, multiplier),
+                            method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-danger' %></td>
+                        <% end %>
                     </tr>
                 <% end %>
             </tbody>

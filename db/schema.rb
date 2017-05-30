@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529164908) do
+ActiveRecord::Schema.define(version: 20170530141958) do
 
   create_table "dailies", force: :cascade do |t|
     t.integer  "game_id"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170529164908) do
   create_table "multipliers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "game_id"
-    t.integer "multiplication"
+    t.decimal "multiplication"
     t.string  "description"
   end
 
