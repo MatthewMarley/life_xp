@@ -16,7 +16,7 @@ class MultipliersController < ApplicationController
         @multiplier.game_id = @game.id
         @multiplier.user_id = current_user.id
         if @multiplier.save
-            flash[:success] = "New Multiplier successfully added"
+            flash[:success] = "New Multiplier Successfully Added"
             redirect_to game_multipliers_path(@game)
         else
             flash[:danger] = @multiplier.errors.full_messages.join(", ")
