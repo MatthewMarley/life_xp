@@ -51,7 +51,25 @@
     
     <div class="col-md-6 reward-table">
         </br>
-            <table class="table table-striped table-bordered table-hover table-responsive">
+        
+        <h1 align="center">Add a New Level: <span id="newLevel"></span></h1>
+        
+        <div class="panel panel-default">
+            <div class="panel-heading well-border">
+                <h4="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#collapseTwo">
+                        <div align="center">Add Daily Points</div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <%= render 'levels/level_form' %>
+                </div>
+            </div>
+        </div>
+        
+        <table class="table table-striped table-bordered table-hover table-responsive">
             <thead>
                 <tr>
                     <th>Level </th>
@@ -59,29 +77,20 @@
                 </tr>
             </thead>
             <tbody>
-                <% if @game.dailies.sum(:points) > 100 %>
-                    <tr>
-                        <td>Beginner - Achieved!</td>
-                        <td>100</td>
-                    </tr>
-                <% else %>
-                    <tr>
-                        <td>Beginner</td>
-                        <td>100</td>
-                    </tr>
+                <% @game.levels.each do |level| %>
+                    
+                    <% if level.points < @game.dailies.sum(:points) %>
+                        <tr>
+                            <td><%= level.level + " - Achieved" %></td>
+                            <td><%= level.points %></td>
+                        </tr>
+                    <% else %>
+                        <tr>
+                            <td><%= level.level %></td>
+                            <td><%= level.points %></td>
+                        </tr>
+                    <% end %>
                 <% end %>
-                <tr>
-                    <td>Newbie</td>
-                    <td>500</td>
-                </tr>
-                <tr>
-                    <td>Amatuer</td>
-                    <td>1000</td>
-                </tr>
-                <tr>
-                    <td>Novice</td>
-                    <td>2000</td>
-                </tr>
             </tbody>
         </table>
     </div>
@@ -123,5 +132,33 @@
                 <% end %>
             </tbody>
         </table>
+    </div>
+    
+</div>
+</br>
+
+<div class="row">
+    <div class="col-md-12">
+        
+        <h1 align="center">Multiplication Table</h1>
+        <hr>
+        <table class="table table-striped table-bordered table-hover table-responsive">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Multiplication</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @game.multipliers.each do |multiplier| %>
+                    <tr>
+                        <td><%= multiplier.description %></td>
+                        <td><%= multiplier.multiplication %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+            
+        </table>    
+        
     </div>
 </div>

@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
    
     def new
-       @game = Game.new
+       @game = Game.all
     end
     
     def create

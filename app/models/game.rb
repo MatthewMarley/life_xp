@@ -4,5 +4,6 @@ class Game < ActiveRecord::Base
     has_many :tasks
     has_many :dailies
     has_many :multipliers
+    has_many :levels
     
 end

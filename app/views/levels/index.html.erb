@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1 align="center">Levels for </h1>
+        <% @game.levels.each do |level| %>
+            <%= level.level %>
+            <%= level.points %>
+        <% end %>
+    </div>
+</div>

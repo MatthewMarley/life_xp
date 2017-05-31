@@ -1,0 +1,13 @@
+<%= form_for [@game, Level.new], url: game_levels_path(@game) do |f| %>
+
+    <div class="form-group">
+        <%= f.label :level %>
+        <%= f.text_field :level, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :points %>
+        <%= f.number_field :points, class: 'form-control', :step => "0.001" %>
+    </div>
+    <%= f.submit "Add Level", class: 'btn btn-primary' %>
+
+<% end %>
